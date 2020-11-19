@@ -1,0 +1,36 @@
+.cards img {
+    width: 150px;
+    height: 150px;
+}
+
+.cards div, .title {
+    min-width: 150px;
+}
+
+.cards {
+    display: flex;
+    gap: 22px;
+}
+
+.cards div {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.title {
+    background-color: white;
+    text-align: center;
+}
+
+img.rounded-card {
+    border-radius: 100%;
+}
+
+@media screen and (min-width: 990px) {
+    .cards {
+        gap: 100px;
+    }
+}
