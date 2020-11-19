@@ -1,4 +1,4 @@
-@import "src/styles";
+@import "src/variables";
 
 #back-arrow {
     width: 25px;
@@ -63,6 +63,6 @@ div.title, h2, .content-list {
 .section-filtrar {
     width: 100vw;
     height: 100vh;
-    background-color: $background-color;
+    background-color: $bg-color;
     color: white;
 }

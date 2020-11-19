@@ -12,6 +12,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { CardsComponent } from './cards/cards.component';
 import { HomeComponent } from './home/home.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     FooterComponent,
     CardsComponent,
-    HomeComponent
+    HomeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     MatOptionModule,
     MatAutocompleteModule,
     MatInputModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

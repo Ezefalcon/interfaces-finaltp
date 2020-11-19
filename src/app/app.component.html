@@ -1,12 +1,12 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<!--
-<div class="row">
-  <div class="container mt-5">
-    <button mat-raised-button class="col-3" color="primary">Angular material test</button>
-    <button class="btn btn-danger col-3 ml-5">Bootstrap test</button>
-  </div>
-</div>
--->
-<app-footer></app-footer>
-
+<app-navbar #navbar></app-navbar>
+<mat-sidenav-container class="example-container" [autosize]="true">
+  <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+               [fixedInViewport]="true" [fixedTopGap]="topGap"
+               [fixedBottomGap]="bottomGap">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer #footer></app-footer>
