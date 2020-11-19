@@ -7,6 +7,40 @@
     min-width: 150px;
 }
 
+.arrow-back:last-of-type {
+    transform: rotate(180deg);
+}
+
+.arrow-back {
+    display: none;
+    cursor: pointer;
+    height: 3vw;
+    width: 3vw;
+    transition: opacity 0.2s;
+}
+
+img.disabled-arrow {
+    opacity: 0;
+}
+
+.horizontal-scroll {
+    -ms-overflow-style: none;
+    display: block;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.rows {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 3%;
+    margin-bottom: 1%;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+
 .cards {
     display: flex;
     gap: 22px;
@@ -32,5 +66,9 @@ img.rounded-card {
 @media screen and (min-width: 990px) {
     .cards {
         gap: 100px;
+    }
+
+    .arrow-back {
+        display: block;
     }
 }

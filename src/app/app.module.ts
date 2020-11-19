@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AppRoutingModule } from './app-routing-module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,6 +11,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { CardsComponent } from './cards/cards.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CardsComponent } from './cards/cards.component';
     FiltrarMobileComponent,
     NavbarComponent,
     FooterComponent,
-    CardsComponent
+    CardsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { CardsComponent } from './cards/cards.component';
     MatButtonModule,
     MatOptionModule,
     MatAutocompleteModule,
-    MatInputModule
+    MatInputModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
