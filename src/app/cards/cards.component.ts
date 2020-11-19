@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ElementRef  } from '@angular/core';
 
 @Component({
   selector: 'app-cards',
@@ -8,42 +8,59 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardsComponent implements OnInit {
   @Input() cards: any;
   @Input() artist: boolean;
+  scroll: number;
+  last: boolean;
+  first: boolean;
 
   constructor() {
-    
+    this.scroll = 0;
+    this.first = true;
+    this.last = false;
   }
 
   ngOnInit(): void {
   }
 
-}
+  next(el: HTMLElement) {
+    this.scrollElement(el,"next");
+  }
+  
+  back(el: HTMLElement) {
+    this.scrollElement(el,"back");
+  }
 
-/**
- * <app-cards [cards]="cards" [artist]="false"></app-cards>
- * this.cards = [
-      {
-        "img":"https://i.ibb.co/W5tTvfx/spotify-img.jpg",
-        "title":"Today's Top Hits"
-      },
-      {
-        "img":"https://i.ibb.co/1sfL3Zk/spotify-playlist2.jpg",
-        "title":"Mates y musica"
-      },
-      {
-        "img":"https://i.ibb.co/9ggxX66/ab67706f0000000240f1cd21ec9d87a1fe00427c.jpg",
-        "title":"Pool party"
-      },
-      {
-        "img":"https://i.ibb.co/6WCWG2B/ab67706f00000002aade2f84b36613140a4ffe0e.jpg",
-        "title":"Cachengue en casa"
-      },
-      {
-        "img":"https://i.ibb.co/QCVF8Ts/ab67706f000000025ffc36370c0825c6114bd466.jpg",
-        "title":"Calma"
-      },
-      {
-        "img":"https://i.ibb.co/fkjtWxL/ab67706f000000028fc71e2599fb11d381046c9d.jpg",
-        "title":"Hits acusticos"
+  scrollElement(el:HTMLElement, direction:string) {
+    let maxScroll = el.scrollWidth - el.clientWidth;
+
+    if (direction == "next") {
+      this.first = false;
+      this.scroll = el.offsetWidth + this.scroll;
+      if (this.scroll > maxScroll) {
+        this.last = true;
+      } else {
+        this.last = false;
       }
-    ]
- */
+
+    } else if (direction == "back") {
+      this.last = false;
+      this.scroll = this.scroll - el.offsetWidth;
+      if (this.scroll <= 0) {
+        this.scroll = 0;
+        this.first = true;
+      } else {
+        this.first = false;
+      }
+    }
+
+    console.log(el.offsetWidth)
+
+    el.scroll({
+      left: this.scroll,
+      top: 0,
+      behavior: 'smooth'
+    });
+
+    console.log("first "+this.first);
+    console.log("last "+this.last);
+  }
+}
