@@ -10,13 +10,16 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { MatOptionModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
     AppComponent,
     FiltrarMobileComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatOptionModule,
     MatAutocompleteModule,
-    MatInputModule
+    MatInputModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

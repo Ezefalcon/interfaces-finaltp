@@ -10,6 +10,10 @@
   background-size: 25px;
 }
 
+.navbar-toggler collapsed {
+  height: 58px;
+}
+
 .input-search:focus {
   outline: none;
 }
@@ -17,3 +21,11 @@
 ::ng-deep .mat-autocomplete-visible {
   border-radius: 7px;
 }
+
+
+@media only screen and (max-width: 992px) {
+  .mt-1r {
+    margin-top: 1rem !important;
+  }
+}
+
