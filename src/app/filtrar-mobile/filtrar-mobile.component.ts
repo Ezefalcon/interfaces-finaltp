@@ -20,7 +20,7 @@ export class FiltrarMobileComponent implements OnInit {
       elementClicked = element.nodeName;
     }
     let divContent = element.querySelector(".content");
-    let arrowOpen = element.querySelector("#open-arrow");
+    let arrowOpen = element.querySelector(".open-arrow");
     arrowOpen.classList.toggle("rotate");
     divContent.classList.toggle("open")
   }
