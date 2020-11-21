@@ -5,10 +5,10 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: red;
   color: white;
   z-index: 2;
   height: 70px;
+  background-color: $nav;
   display: flex;
   justify-content: center;
   align-items: center;
