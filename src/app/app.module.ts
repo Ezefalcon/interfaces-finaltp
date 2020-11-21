@@ -14,6 +14,7 @@ import { CardsComponent } from './cards/cards.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { ListaCancionesComponent } from './lista-canciones/lista-canciones.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     FooterComponent,
     CardsComponent,
     HomeComponent,
-    SidebarComponent
+    SidebarComponent,
+    ListaCancionesComponent
   ],
   imports: [
     BrowserModule,
