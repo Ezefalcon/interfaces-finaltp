@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SongListenerService } from '../services/song-listener.service';
 
 @Component({
   selector: 'app-lista-canciones',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListaCancionesComponent implements OnInit {
   canciones: any;
 
-  constructor() {
+  constructor(private songService : SongListenerService) {
     this.canciones = [
       {
         "reproduciendo": true,
@@ -47,6 +48,10 @@ export class ListaCancionesComponent implements OnInit {
         "calificacion": 3
       }
     ]
+  }
+
+  playSong(song) {
+    this.songService.currentSong$.emit(song);
   }
 
   ngOnInit(): void {
