@@ -1,15 +1,19 @@
 <app-navbar #navbar></app-navbar>
 <mat-sidenav-container class="example-container" [autosize]="true">
-  <mat-sidenav #sidenav mode="side" opened class="example-sidenav"
+  <mat-sidenav #sidenav mode="side" opened class="sidenav"
                [fixedInViewport]="true" [fixedTopGap]="topGap"
                [fixedBottomGap]="bottomGap">
+    <img src="assets/icons/back-arrow.svg" class="back-icon" (click)="sidenav.toggle()">
     <app-sidebar></app-sidebar>
   </mat-sidenav>
   <mat-sidenav-content>
+<!--    <h1 (click)="sidenav.toggle()">Toggle</h1>-->
+    <div class="hidden-sidebar">
+      <img src="assets/icons/down-arrow.svg" class="open-sidebar" (click)="sidenav.toggle()">
+    </div>
     <div class="pl-5 pb-3">
       <router-outlet class="ml-2"></router-outlet>
     </div>
-    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 <app-footer #footer></app-footer>
