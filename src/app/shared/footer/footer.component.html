@@ -1,16 +1,16 @@
 <footer>
-  <img class="pointer" id="song-img" src="https://i.ibb.co/Tg4KcvR/ab67706f00000003373a52c05d01c8fe298eda2e.jpg">
+  <img class="pointer" id="song-img" src="{{currentSong.image}}">
   <div class="content">
     <div class="flex-start">
-      <div class="song-name pointer">Mates y musica hola</div>
+      <div class="song-name pointer">{{currentSong.name}}</div>
       <img class="icon favorite pointer switch" (click)="favorite()" src="assets/icons/favorite-song.svg" [ngClass]="{ 'enabled':fav }">
       <img class="icon favorite pointer switch" (click)="favorite()" src="assets/icons/favorite-song-filled.svg" [ngClass]="{ 'enabled':!fav }">
       
       <div class="player-bar">
-        <span class="start">0:00</span>
-        <span class="end">3:50</span>
+        <span class="start">{{currentSong.currentDuration}}</span>
+        <span class="end">{{currentSong.duration}}</span>
         <div class="bar">
-          <div class="pointer"></div>
+          <div class="pointer" #progressSong></div>
         </div>
       </div>
     </div>
@@ -42,11 +42,11 @@
         <div class="calification-background" [ngClass]="{ 'enabled':califications }">
           <img src="assets/icons/calification-background.svg">
           <div class="calification-stars">
-            <img class="icon star" src="assets/icons/star.svg">
-            <img class="icon star" src="assets/icons/star.svg">
-            <img class="icon star" src="assets/icons/star.svg">
-            <img class="icon star" src="assets/icons/star.svg">
-            <img class="icon star" src="assets/icons/star.svg">
+            <img (mouseenter)="starAnimation($event)" (mouseleave)="starAnimation($event)" class="icon star" src="assets/icons/star.svg">
+            <img (mouseenter)="starAnimation($event)" (mouseleave)="starAnimation($event)" class="icon star" src="assets/icons/star.svg">
+            <img (mouseenter)="starAnimation($event)" (mouseleave)="starAnimation($event)" class="icon star" src="assets/icons/star.svg">
+            <img (mouseenter)="starAnimation($event)" (mouseleave)="starAnimation($event)" class="icon star" src="assets/icons/star.svg">
+            <img (mouseenter)="starAnimation($event)" (mouseleave)="starAnimation($event)" class="icon star" src="assets/icons/star.svg">
           </div>
         </div>
         <img class="icon pointer" (click)="openCalification()" src="assets/icons/star.svg">
