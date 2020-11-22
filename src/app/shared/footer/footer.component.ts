@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -6,16 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  @ViewChild('progressSong') progressSong: ElementRef;
   volumeBar:boolean;
   califications: boolean;
   play:boolean;
   fav:boolean;
+  currentSong:any;
+  interval:any;
 
   constructor() {
     this.volumeBar = false;
     this.califications = false;
-    this.play = false;
+    this.play = true;
     this.fav = !this.fav;
+    this.currentSong = {
+      "name" : "Mates y musica hola",
+      "image" : "https://i.ibb.co/Tg4KcvR/ab67706f00000003373a52c05d01c8fe298eda2e.jpg",
+      "duration":"3:50",
+      "currentDuration":"0:00"
+    }
   }
 
   ngOnInit(): void {
@@ -30,11 +39,74 @@ export class FooterComponent implements OnInit {
   }
 
   playPause() {
-    this.play = !this.play;
+    if (this.currentSong.name != "") {
+      this.play = !this.play;
+      if (!this.play) {
+        this.interval = setInterval(()=> {
+          let seconds = this.currentSong.currentDuration.substring(2,4);
+          let mins = this.currentSong.currentDuration.substring(0,1);
+          seconds++;
+  
+          if (seconds == 60) {
+            mins++;
+            seconds = 0;
+          }
+  
+          seconds = ('0' + seconds.toString()).slice(-2)
+  
+          this.currentSong.currentDuration = mins + ":" +seconds;
+          this.calcPlayerBar()
+          if (this.currentSong.currentDuration == this.currentSong.duration) {
+            this.onFinishSong();
+          }
+        } ,1000);
+      } else {
+        clearInterval(this.interval);
+      }
+    }
   }
 
   favorite() {
     this.fav = !this.fav;
   }
 
+  onFinishSong() {
+    clearInterval(this.interval);
+  }
+
+  calcPlayerBar() {
+    let currentSeconds = parseInt(this.currentSong.currentDuration.substring(2,4));
+    let currentMin = parseInt(this.currentSong.currentDuration.substring(0,1));
+    let totalSeconds = parseInt(this.currentSong.duration.substring(2,4));
+    let totalMin = parseInt(this.currentSong.duration.substring(0,1));
+
+    let barPercent = 0;
+    if (currentSeconds != 0) {
+      currentSeconds = currentSeconds + (currentMin * 60);
+    } else {
+      currentSeconds = currentMin * 60;
+    }
+    
+    totalSeconds = totalSeconds + (totalMin * 60);
+
+    barPercent = (currentSeconds / totalSeconds) * 100;
+
+    this.progressSong.nativeElement.style.left = barPercent + "%";
+  }
+
+  starAnimation(event) {
+    let scrStar = "assets/icons/star.svg";
+    let scrStarFill = "assets/icons/star-fill.svg";
+    let star = event.srcElement;
+    try {
+      while (star.nodeName == 'IMG') {
+        if (star.src.includes(scrStarFill)) {
+          star.src = scrStar;
+        } else {
+          star.src = scrStarFill;
+        }
+        star = star.previousElementSibling;
+      }
+    } catch {}
+  }
 }
