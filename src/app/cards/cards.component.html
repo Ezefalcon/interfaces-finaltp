@@ -1,6 +1,14 @@
-<div class="rows">
-    <img class="arrow-back" (click)="back(divCards)" [ngClass]="{ 'disabled-arrow': first }" src="assets/icons/back-arrow.svg">
-    <img class="arrow-back" (click)="next(divCards)" [ngClass]="{ 'disabled-arrow': last }" src="assets/icons/back-arrow.svg">
+<div class="row title-cards">
+    <div class="row title-cards">
+        <h2 [ngClass]="{ 'clickable':title.clickable }">{{title.title}}</h2>
+        <div>
+            <img width="20" height="20" src="assets/icons/arrow-title.svg">
+        </div>
+    </div>
+    <div class="arrows">
+        <img class="arrow-back" (click)="back(divCards)" [ngClass]="{ 'disabled-arrow': first }" src="assets/icons/back-arrow.svg">
+        <img class="arrow-back" (click)="next(divCards)" [ngClass]="{ 'disabled-arrow': last || scrollDisabled }" src="assets/icons/back-arrow.svg">
+    </div>
 </div>
 
 <div #divCards class="horizontal-scroll">

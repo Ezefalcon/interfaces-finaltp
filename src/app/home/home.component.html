@@ -1,2 +1,7 @@
-<app-cards [cards]="cards" [artist]="false"></app-cards>
-<app-lista-canciones></app-lista-canciones>
+<div class="flex-column">
+    <app-cards [cards]="playlists" [artist]="false" [title]="titlePlaylist"></app-cards>
+    <app-cards [cards]="podcasts" [artist]="false" [title]="titlePodcast"></app-cards>
+    <div class="lista-canciones">
+        <app-lista-canciones></app-lista-canciones>
+    </div>
+</div>
