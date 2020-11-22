@@ -7,12 +7,13 @@ import { SongListenerService } from '../services/song-listener.service';
   styleUrls: ['./lista-canciones.component.scss']
 })
 export class ListaCancionesComponent implements OnInit {
+  lastSong: any;
   canciones: any;
 
   constructor(private songService : SongListenerService) {
     this.canciones = [
       {
-        "reproduciendo": true,
+        "reproduciendo": false,
         "img":"https://i.ibb.co/28PQ0mk/ab67616d000048517368325f5998ef48d4fb5401.jpg",
         "nombre":"Positions",
         "artista":"Ariana Grande",
@@ -52,6 +53,20 @@ export class ListaCancionesComponent implements OnInit {
 
   playSong(song) {
     this.songService.currentSong$.emit(song);
+  }
+
+  mouseEnterSong(song) {
+    if (this.lastSong != undefined) {
+      this.lastSong.reproduciendo = false;
+    }
+
+    this.lastSong = song;
+    this.lastSong.reproduciendo = true;
+    
+  }
+
+  mouseLeaveSong() {
+    this.lastSong.reproduciendo = false;
   }
 
   ngOnInit(): void {
