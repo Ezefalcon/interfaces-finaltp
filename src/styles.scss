@@ -31,7 +31,6 @@ $Interfaces-FinalTP-theme: mat-dark-theme((
   )
 ));
 
-$nav: #424242;
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -45,4 +44,8 @@ body {
   background: linear-gradient(180deg, rgba(0, 255, 163, 0.5) 0%, #000000 120.18%);
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.icon {
+  height: 25px;
 }

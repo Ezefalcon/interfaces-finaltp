@@ -10,6 +10,7 @@ export class AppComponent implements OnInit,AfterViewInit{
   bottomGap: number = 0;
   topGap: number = 0;
   @ViewChild('navbar', {read: ElementRef}) navBarView: ElementRef;
+  sideNavToggler: boolean = false;
 
   constructor(private cd: ChangeDetectorRef) {
     this.topGap = 0;
@@ -22,5 +23,4 @@ export class AppComponent implements OnInit,AfterViewInit{
 
   ngOnInit(): void {
   }
-
 }
