@@ -1,7 +1,7 @@
 <div class="row title-cards">
     <div class="row title-cards">
-        <h2 [ngClass]="{ 'clickable':title.clickable }">{{title.title}}</h2>
-        <div>
+        <h2 class="black" [ngClass]="{ 'clickable':title.clickable }">{{title.title}}</h2>
+        <div *ngIf="title.clickable">
             <img width="20" height="20" src="assets/icons/arrow-title.svg">
         </div>
     </div>
@@ -15,7 +15,7 @@
     <div class="cards">
         <div *ngFor="let card of cards">
             <img src='{{card.img}}' alt="card" [ngClass]="{'rounded-card': artist}">
-            <span class="title">{{card.title}}</span>
+            <span class="title" [ngClass]="{'rounded-title': artist}">{{card.title}}</span>
         </div>
     </div>
 </div>

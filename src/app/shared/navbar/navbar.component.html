@@ -12,12 +12,16 @@
              placeholder="Canciones, artistas, etc"
              aria-label="Number"
              matInput
-             [matAutocomplete]="auto">
+             [matAutocomplete]="auto"
+             #searchInput>
       <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let option of options" [value]="option">
           {{option}}
         </mat-option>
       </mat-autocomplete>
+      <button id="search-button" (click)="search(searchInput.value)">
+        <div><img class="rotate icon next" src="assets/icons/search-icon.svg"></div>
+      </button>
     </div>
   </div>
 

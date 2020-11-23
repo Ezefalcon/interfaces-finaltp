@@ -3,6 +3,10 @@
     height: 150px;
 }
 
+.black {
+    color: black;
+}
+
 .cards div, .title {
     color: black;
     min-width: 150px;
@@ -59,6 +63,13 @@ img.disabled-arrow {
 .title {
     background-color: white;
     text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.title.rounded-title {
+    border-radius: 15px;
 }
 
 img.rounded-card {
