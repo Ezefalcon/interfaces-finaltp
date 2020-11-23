@@ -15,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ListaCancionesComponent } from './lista-canciones/lista-canciones.component';
+import { FiltrarComponent } from './filtrar/filtrar.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ListaCancionesComponent } from './lista-canciones/lista-canciones.compo
     CardsComponent,
     HomeComponent,
     SidebarComponent,
-    ListaCancionesComponent
+    ListaCancionesComponent,
+    FiltrarComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

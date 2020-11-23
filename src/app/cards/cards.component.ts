@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild, ElementRef, ChangeDetectorRef  } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ElementRef, ChangeDetectorRef, OnChanges  } from '@angular/core';
 
 @Component({
   selector: 'app-cards',
