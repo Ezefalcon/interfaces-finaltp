@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row title">
 <h2>Tus canciones</h2>
 <div>
     <img width="20" height="20" src="assets/icons/arrow-title.svg">
@@ -16,8 +16,8 @@
 <div class="raya"></div>
 <table class="tabla-cancion">
     <tbody>
-        <tr *ngFor="let cancion of canciones">
-            <td class="reproduccion" *ngIf="cancion.reproduciendo == true; else elseBlock"><svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <tr *ngFor="let cancion of canciones" (mouseenter)="mouseEnterSong(cancion)" (mouseleave)="mouseLeaveSong()">
+            <td class="reproduccion" *ngIf="cancion.reproduciendo == true; else elseBlock"><svg class="pointer" (click)="playSong(cancion)" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.914062 0.628571V17.0571L14.7141 8.84286L0.914062 0.628571Z" fill="white"/>
                 </svg>                              
                 </td>

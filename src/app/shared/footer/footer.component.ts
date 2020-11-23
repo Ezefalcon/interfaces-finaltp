@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { SongListenerService } from 'src/app/services/song-listener.service';
 
 @Component({
   selector: 'app-footer',
@@ -14,20 +15,26 @@ export class FooterComponent implements OnInit {
   currentSong:any;
   interval:any;
 
-  constructor() {
+  constructor(private songService : SongListenerService) {
     this.volumeBar = false;
     this.califications = false;
     this.play = true;
     this.fav = !this.fav;
     this.currentSong = {
       "name" : "Mates y musica hola",
-      "image" : "https://i.ibb.co/Tg4KcvR/ab67706f00000003373a52c05d01c8fe298eda2e.jpg",
+      "img" : "https://i.ibb.co/Tg4KcvR/ab67706f00000003373a52c05d01c8fe298eda2e.jpg",
       "duration":"3:50",
       "currentDuration":"0:00"
     }
   }
 
   ngOnInit(): void {
+    this.songService.currentSong$.subscribe(song => {
+      this.currentSong.img = song.img;
+      this.currentSong.name = song.nombre;
+      this.currentSong.duration = song.duracion;
+      this.currentSong.currentDuration = "0:00";
+    });
   }
 
   openVolume(){
