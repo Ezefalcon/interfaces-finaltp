@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild, ElementRef  } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ElementRef, ChangeDetectorRef  } from '@angular/core';
 
 @Component({
   selector: 'app-cards',
@@ -8,11 +8,14 @@ import { Component, Input, OnInit, ViewChild, ElementRef  } from '@angular/core'
 export class CardsComponent implements OnInit {
   @Input() cards: any;
   @Input() artist: boolean;
+  @Input() title: any;
+  @ViewChild('divCards') divCards: ElementRef;
   scroll: number;
   last: boolean;
   first: boolean;
+  scrollDisabled: boolean;
 
-  constructor() {
+  constructor(private cdRef:ChangeDetectorRef) {
     this.scroll = 0;
     this.first = true;
     this.last = false;
@@ -52,15 +55,20 @@ export class CardsComponent implements OnInit {
       }
     }
 
-    console.log(el.offsetWidth)
-
     el.scroll({
       left: this.scroll,
       top: 0,
       behavior: 'smooth'
     });
 
-    console.log("first "+this.first);
-    console.log("last "+this.last);
   }
+
+  ngAfterViewChecked() {
+    let maxScroll = this.divCards.nativeElement.scrollWidth - this.divCards.nativeElement.clientWidth;
+    if (maxScroll == 0) {
+      this.scrollDisabled = true;
+    }
+    this.cdRef.detectChanges();
+  }
+
 }

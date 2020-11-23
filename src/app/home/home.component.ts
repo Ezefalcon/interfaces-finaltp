@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  cards: any;
+  playlists: any;
+  titlePlaylist:any;
+  titlePodcast:any;
+  podcasts:any;
 
   constructor() {
-    this.cards = [
+    this.playlists = [
       {
         "img":"https://i.ibb.co/W5tTvfx/spotify-img.jpg",
         "title":"Today's Top Hits"
@@ -29,10 +32,6 @@ export class HomeComponent implements OnInit {
       {
         "img":"https://i.ibb.co/QCVF8Ts/ab67706f000000025ffc36370c0825c6114bd466.jpg",
         "title":"Calma"
-      },
-      {
-        "img":"https://i.ibb.co/fkjtWxL/ab67706f000000028fc71e2599fb11d381046c9d.jpg",
-        "title":"Hits acusticos"
       },
       {
         "img":"https://i.ibb.co/fkjtWxL/ab67706f000000028fc71e2599fb11d381046c9d.jpg",
@@ -75,6 +74,74 @@ export class HomeComponent implements OnInit {
         "title":"Feelin Good"
       }
     ]
+
+    this.podcasts = [
+      {
+        "img":"https://i.ibb.co/MSFKV0g/podcast.jpg",
+        "title":"La mente en forma"
+      },
+      {
+        "img":"https://i.ibb.co/51kBP2Z/1.jpg",
+        "title":"Comedia"
+      },
+      {
+        "img":"https://i.ibb.co/YjGHcFX/bf2cdc37159b9372240250bf64caab1715b403f5.jpg",
+        "title":"Podcast in english"
+      },
+      {
+        "img":"https://i.ibb.co/zQPCcZK/ac6f0d04608b86881e4b3125df459755bfb8dd33d85521dd4fe490ce4279e2630ef1ca91b2c235d4f95021c6a4e8495aca8c.jpg",
+        "title":"Podcast para dormir"
+      },
+      {
+        "img":"https://i.ibb.co/TgRy4kB/17544f55366b2290142b5c38bc8dd1c90239dc1b.jpg",
+        "title":"Podcast italiano"
+      },
+      {
+        "img":"https://i.ibb.co/0tHDZGD/ab67616d00001e028db99aa871e6e25a94264e90.jpg",
+        "title":"Criaturas podcast"
+      }
+    ]
+/*
+
+    this.artists = [
+      {
+        "img":"https://i.ibb.co/Y3X0LCy/artist.jpg",
+        "title":"Sech"
+      },
+      {
+        "img":"https://i.ibb.co/vkxTFnP/1.jpg",
+        "title":"Maluma"
+      },
+      {
+        "img":"https://i.ibb.co/jMDCfWK/4527ee5f764813d9e9784211b1264e39907449de.jpg",
+        "title":"Reik"
+      },
+      {
+        "img":"https://i.ibb.co/MPgQMnx/8130e70162ded2c19d67e2ae71772bc373fe0334.jpg",
+        "title":"KHEA"
+      },
+      {
+        "img":"https://i.ibb.co/gtNNzYB/a8b4befcb6d3bc9c942a0c97bf3d64d735920f72.jpg",
+        "title":"Sebastian Yatra"
+      },
+      {
+        "img":"https://i.ibb.co/4sVkCmm/23009960c33ef08d5973440cca17985a6c70a515.jpg",
+        "title":"Bad Bunny"
+      }
+    ]
+    */
+
+    this.titlePlaylist = {
+      "title": "Tus playlists",
+      "clickable":true,
+      "link": ""
+    }
+
+    this.titlePodcast = {
+      "title": "Tus podcasts",
+      "clickable":true,
+      "link": ""
+    }
   }
 
   ngOnInit(): void {
