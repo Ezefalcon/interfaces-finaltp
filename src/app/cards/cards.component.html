@@ -5,7 +5,7 @@
             <img width="20" height="20" src="assets/icons/arrow-title.svg">
         </div>
     </div>
-    <div class="arrows">
+    <div class="arrows pointer">
         <img class="arrow-back" (click)="back(divCards)" [ngClass]="{ 'disabled-arrow': first }" src="assets/icons/back-arrow.svg">
         <img class="arrow-back" (click)="next(divCards)" [ngClass]="{ 'disabled-arrow': last || scrollDisabled }" src="assets/icons/back-arrow.svg">
     </div>
@@ -13,7 +13,7 @@
 
 <div #divCards class="horizontal-scroll">
     <div class="cards">
-        <div *ngFor="let card of cards">
+        <div *ngFor="let card of cards" class="shadow-card card pointer" (click)="see(card)">
             <img src='{{card.img}}' alt="card" [ngClass]="{'rounded-card': artist}">
             <span class="title" [ngClass]="{'rounded-title': artist}">{{card.title}}</span>
         </div>

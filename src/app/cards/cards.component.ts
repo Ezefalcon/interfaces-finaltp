@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewChild, ElementRef, ChangeDetectorRef, OnChanges  } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -15,7 +16,7 @@ export class CardsComponent implements OnInit {
   first: boolean;
   scrollDisabled: boolean;
 
-  constructor(private cdRef:ChangeDetectorRef) {
+  constructor(private cdRef:ChangeDetectorRef,private router: Router) {
     this.scroll = 0;
     this.first = true;
     this.last = false;
@@ -69,6 +70,10 @@ export class CardsComponent implements OnInit {
       this.scrollDisabled = true;
     }
     this.cdRef.detectChanges();
+  }
+
+  see(card) {
+    this.router.navigate([card.link]);
   }
 
 }

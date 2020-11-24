@@ -8,6 +8,31 @@ height: 49px;
 }
 
 .tabla-cancion {
+    border-collapse:separate; 
+    border-spacing: 0 50px;
+}
+
+.line-icon {
+    margin-right: 13px;
+}
+
+tr.song {
+    /*background-color: white;*/
+    transition: .3s ease-out;
+    -webkit-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.75);
+    transition: .3s ease-out;
+}
+
+tr.song:hover {
+    -webkit-box-shadow: 0px 0px 20px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 4px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 4px rgba(0,0,0,0.75);
+    transform: scale(1.05);
+}
+
+.tabla-cancion {
     left: 49px;
     position: relative;
 }
