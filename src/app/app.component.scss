@@ -1,11 +1,5 @@
 @import "src/variables";
 
-.back-icon {
-  height: 35px;
-  float: right;
-  margin: 7px;
-}
-
 .back-icon:hover {
   cursor: pointer;
 }
@@ -26,4 +20,8 @@
 
 .sidenav {
   background-color: $bg-color;
+}
+
+.mat-drawer-container {
+  background-color: inherit;
 }
