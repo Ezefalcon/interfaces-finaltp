@@ -17,6 +17,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { ListaCancionesComponent } from './lista-canciones/lista-canciones.component';
 import { FiltrarComponent } from './filtrar/filtrar.component';
 import { SearchComponent } from './search/search.component';
+import { SeePlaylistComponent } from './see-playlist/see-playlist.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SearchComponent } from './search/search.component';
     SidebarComponent,
     ListaCancionesComponent,
     FiltrarComponent,
-    SearchComponent
+    SearchComponent,
+    SeePlaylistComponent
   ],
   imports: [
     BrowserModule,
