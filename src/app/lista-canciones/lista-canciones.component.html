@@ -17,11 +17,11 @@
 <table class="tabla-cancion" cellspacing="0">
     <tbody>
         <tr *ngFor="let cancion of canciones" class="song" (mouseenter)="mouseEnterSong(cancion)" (mouseleave)="mouseLeaveSong()">
-            <td class="reproduccion" *ngIf="cancion.reproduciendo == true; else elseBlock"><svg class="pointer" (click)="playSong(cancion)" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <td class="reproduccion" *ngIf="cancion.reproduciendo == true; else elseBlock"><svg class="pointer icon-small" (click)="playSong(cancion)" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.914062 0.628571V17.0571L14.7141 8.84286L0.914062 0.628571Z" fill="white"/>
                 </svg>                              
                 </td>
-                <ng-template #elseBlock><td><svg class="line-icon" width="15" height="1" viewBox="0 0 14 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ng-template #elseBlock><td><svg class="line-icon" width="20" height="1" viewBox="0 0 14 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line y1="0.5" x2="14" y2="0.5" stroke="white"/>
                     </svg>
                 </td>
@@ -33,17 +33,17 @@
             <td class="duracion">{{cancion.duracion}}</td>
             <td class="calificacion">
                 <div class="row">
-                <div class="star" *ngIf="cancion.calificacion > 0; else elseBlock2"><img width="20" height="20" src="assets/icons/star-filled.svg">
+                <div class="star" *ngIf="cancion.calificacion > 0; else elseBlock2"><img class="icon-small" src="assets/icons/star-filled.svg">
                     </div>
-                    <div class="star" *ngIf="cancion.calificacion > 1; else elseBlock2"><img width="20" height="20" src="assets/icons/star-filled.svg">
+                    <div class="star" *ngIf="cancion.calificacion > 1; else elseBlock2"><img class="icon-small" src="assets/icons/star-filled.svg">
                     </div>
-                    <div class="star" *ngIf="cancion.calificacion > 2; else elseBlock2"><img width="20" height="20" src="assets/icons/star-filled.svg">
+                    <div class="star" *ngIf="cancion.calificacion > 2; else elseBlock2"><img class="icon-small" src="assets/icons/star-filled.svg">
                     </div>
-                    <div class="star" *ngIf="cancion.calificacion > 3; else elseBlock2"><img width="20" height="20" src="assets/icons/star-filled.svg">
+                    <div class="star" *ngIf="cancion.calificacion > 3; else elseBlock2"><img class="icon-small" src="assets/icons/star-filled.svg">
                     </div>                 
-                    <div class="star" *ngIf="cancion.calificacion > 4; else elseBlock2"><img width="20" height="20" src="assets/icons/star-filled.svg">
+                    <div class="star" *ngIf="cancion.calificacion > 4; else elseBlock2"><img class="icon-small" src="assets/icons/star-filled.svg">
                     </div>
-                    <ng-template #elseBlock2> <div class="star"><img  width="20" height="20" src="assets/icons/star.svg">     
+                    <ng-template #elseBlock2> <div class="star"><img  class="icon-small" src="assets/icons/star.svg">     
                     </div>                            
                     </ng-template>                 
                 </div>
