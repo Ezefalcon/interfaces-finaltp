@@ -26,6 +26,7 @@ import { OpinionesComponent } from './opiniones/opiniones.component';
 import { SeeSongComponent } from './see-song/see-song.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { SuggestionsComponent } from './suggestions/suggestions.component';
     AppRoutingModule,
     MatTooltipModule,
     MatSidenavModule,
+    MatCheckboxModule,
     ReactiveFormsModule
   ],
   providers: [],

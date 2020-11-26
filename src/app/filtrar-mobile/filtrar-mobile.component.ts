@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-filtrar-mobile',
   templateUrl: './filtrar-mobile.component.html',
-  styleUrls: ['./filtrar-mobile.component.scss']
+  styleUrls: ['./filtrar-mobile.component.scss'],
+  animations: []
 })
 export class FiltrarMobileComponent implements OnInit {
   active:boolean;
@@ -26,5 +27,9 @@ export class FiltrarMobileComponent implements OnInit {
     let arrowOpen = element.querySelector(".open-arrow");
     arrowOpen.classList.toggle("rotate");
     divContent.classList.toggle("open")
+  }
+
+  close() {
+    this.onClose.emit()
   }
 }
