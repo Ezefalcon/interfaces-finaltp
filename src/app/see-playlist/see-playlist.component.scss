@@ -25,11 +25,6 @@ section {
     width: 300px;
 }
 
-.icon {
-    height: 45px;
-    width: 45px;
-}
-
 .icons {
     margin-top: 7%;
     justify-content: space-between;
@@ -44,7 +39,7 @@ section {
     opacity: 0;
     display: flex;
     justify-content: space-between;
-    padding: 50% 20% 0 20%;
+    padding: 100% 20% 0 20%;
     height: 81.6px;
     width: 297.6px;
     background-image: url("../../assets/others/background-stars.svg");
@@ -52,7 +47,7 @@ section {
     background-repeat: no-repeat;
     position: absolute;
     top: 120%;
-    left: -279%;
+    left: -415%;
 }
 
 .background-califications.active {
@@ -65,12 +60,12 @@ section {
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
-    gap: 9%;
+    gap: 3%;
     flex-direction: column;
     width: 80px;
     height: 60px;
     position: relative;
-    top: -15%;
+    top: -8%;
     left: -90%;
     opacity: 0;
     transition: opacity .3s;
