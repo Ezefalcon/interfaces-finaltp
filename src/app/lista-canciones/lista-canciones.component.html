@@ -1,6 +1,6 @@
 
 <div class="row title">
-<h2>Tus canciones</h2>
+    <h2>{{title.title}}</h2>
 <div>
     <img width="20" height="20" src="assets/icons/arrow-title.svg">
     </div>
@@ -27,7 +27,7 @@
                 </td>
                     </ng-template>
             <td class="imagen"><img class="imagen-cancion" src="{{cancion.img}}" alt="imagen"></td>
-            <td class="nombre">{{cancion.nombre}}</td>
+            <td class="nombre"><span (click)="seeSong(cancion)" class="linkeable">{{cancion.nombre}}</span></td>
             <td class="artista">{{cancion.artista}}</td>
             <td class="album">{{cancion.album}}</td>
             <td class="duracion">{{cancion.duracion}}</td>

@@ -18,6 +18,8 @@ import { ListaCancionesComponent } from './lista-canciones/lista-canciones.compo
 import { FiltrarComponent } from './filtrar/filtrar.component';
 import { SearchComponent } from './search/search.component';
 import { SeePlaylistComponent } from './see-playlist/see-playlist.component';
+import { OpinionesComponent } from './opiniones/opiniones.component';
+import { SeeSongComponent } from './see-song/see-song.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { SeePlaylistComponent } from './see-playlist/see-playlist.component';
     ListaCancionesComponent,
     FiltrarComponent,
     SearchComponent,
-    SeePlaylistComponent
+    SeePlaylistComponent,
+    OpinionesComponent,
+    SeeSongComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { SongListenerService } from '../services/song-listener.service';
 
 @Component({
@@ -8,47 +9,10 @@ import { SongListenerService } from '../services/song-listener.service';
 })
 export class ListaCancionesComponent implements OnInit {
   lastSong: any;
-  canciones: any;
+  @Input()canciones: any;
+  @Input() title: any;
 
-  constructor(private songService : SongListenerService) {
-    this.canciones = [
-      {
-        "reproduciendo": false,
-        "img":"https://i.ibb.co/28PQ0mk/ab67616d000048517368325f5998ef48d4fb5401.jpg",
-        "nombre":"Positions",
-        "artista":"Ariana Grande",
-        "album":"Postitions",
-        "duracion": "2:52",
-        "calificacion": 5 
-      },
-      {
-        "reproduciendo": false,
-        "img":"https://i.ibb.co/Y7ftFMz/ab67616d0000485177ada0863603903f57b34369.jpg",
-        "nombre":"What You Know Bout Love",
-        "artista":"Pop Smoke",
-        "album":"Shoot for the stars",
-        "duracion": "2:40",
-        "calificacion": 4
-      },
-      {
-        "reproduciendo": false,
-        "img":"https://i.ibb.co/1sH4Nq4/ab67616d00004851d46a8fffbe6c8630784f04da.jpg",
-        "nombre":"Lemonade",
-        "artista":"Internet Money",
-        "album":"Lemonade",
-        "duracion": "3:15",
-        "calificacion": 1
-      },
-      {
-        "reproduciendo": false,
-        "img":"https://i.ibb.co/sRP5BKR/ab67616d0000485183b22beb73e2014b20159685.jpg",
-        "nombre":"Lonely",
-        "artista":"Justin Bieber",
-        "album":"Lonely",
-        "duracion": "2:29",
-        "calificacion": 3
-      }
-    ]
+  constructor(private songService : SongListenerService,private router: Router) {
   }
 
   playSong(song) {
@@ -70,6 +34,12 @@ export class ListaCancionesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    for (let i = 0; i < this.canciones.length; i++)
+      this.canciones[i]["reproduciendo"] = false;
+  }
+
+  seeSong(song) {
+    this.router.navigate([song.link]);
   }
 
 }

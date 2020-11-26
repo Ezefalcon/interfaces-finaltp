@@ -39,4 +39,6 @@
     </div>
 </section>
 
-<app-lista-canciones></app-lista-canciones>
+<section *ngIf="playlist.songs.length > 0">
+    <app-lista-canciones [canciones]="playlist.songs" [title]="titleSongs"></app-lista-canciones>
+</section>
