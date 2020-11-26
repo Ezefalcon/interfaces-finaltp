@@ -57,7 +57,11 @@ img.disabled-arrow {
 .cards {
     display: flex;
     gap: 22px;
-    padding: 45px;
+    padding: 45px 0 45px 20px;
+}
+
+h2 {
+    padding-left: 20px;
 }
 
 .cards div {
