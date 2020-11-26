@@ -25,6 +25,7 @@ import { OpinionesComponent } from './opiniones/opiniones.component';
 import { SeeSongComponent } from './see-song/see-song.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
+import { SectionCalificarComponent } from './section-calificar/section-calificar.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SuggestionsComponent } from './suggestions/suggestions.component';
     OpinionesComponent,
     SeeSongComponent,
     RecommendationsComponent,
-    SuggestionsComponent
+    SuggestionsComponent,
+    SectionCalificarComponent
   ],
   imports: [
     BrowserModule,

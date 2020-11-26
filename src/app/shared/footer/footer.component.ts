@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { HidePlayerService } from 'src/app/services/hide-player.service';
 import { SongListenerService } from 'src/app/services/song-listener.service';
 
 @Component({
@@ -14,8 +15,9 @@ export class FooterComponent implements OnInit {
   fav:boolean;
   currentSong:any;
   interval:any;
+  hide:boolean;
 
-  constructor(private songService : SongListenerService) {
+  constructor(private songService : SongListenerService,private hideService : HidePlayerService) {
     this.volumeBar = false;
     this.califications = false;
     this.play = true;
@@ -34,6 +36,10 @@ export class FooterComponent implements OnInit {
       this.currentSong.name = song.nombre;
       this.currentSong.duration = song.duracion;
       this.currentSong.currentDuration = "0:00";
+    });
+
+    this.hideService.hide$.subscribe(r => {
+      this.hide = !this.hide;
     });
   }
 
