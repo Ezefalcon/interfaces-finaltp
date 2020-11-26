@@ -18,4 +18,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(["search/"+value.toLowerCase().replace(" ","-")])
   }
 
+  goHome() {
+    this.router.navigate(["/"])
+  }
 }
