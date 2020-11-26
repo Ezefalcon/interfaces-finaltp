@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { HidePlayerService } from '../services/hide-player.service';
 
 @Component({
   selector: 'app-section-calificar',
@@ -9,7 +10,7 @@ export class SectionCalificarComponent implements OnInit {
   @Output() onClose: EventEmitter<any> = new EventEmitter<any>();
   users: any;
 
-  constructor() { 
+  constructor(private hidePlayerService : HidePlayerService) { 
     this.users = [{
       "username" : "user1",
       "comment" : "muy buena, me gusto!",
@@ -39,6 +40,11 @@ export class SectionCalificarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  close() {
+    this.hidePlayerService.hide$.emit();
+    this.onClose.emit();
   }
 
 }
