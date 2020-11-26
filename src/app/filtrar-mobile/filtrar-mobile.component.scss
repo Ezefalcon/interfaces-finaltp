@@ -64,14 +64,10 @@ div.title, h2, .content-list {
     z-index: 10;
     transition: .4s ease-out;
     position: fixed;
-    top: 0;
-    left: -100%;
+    top: 58px;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-color: $bg-color;
     color: white;
-}
-
-.section-filtrar.active {
-    left: 0;
 }

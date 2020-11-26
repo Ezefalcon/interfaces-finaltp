@@ -18,6 +18,9 @@ import { ListaCancionesComponent } from './lista-canciones/lista-canciones.compo
 import { FiltrarComponent } from './filtrar/filtrar.component';
 import { SearchComponent } from './search/search.component';
 import { SeePlaylistComponent } from './see-playlist/see-playlist.component';
+import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -39,9 +42,12 @@ import { SeePlaylistComponent } from './see-playlist/see-playlist.component';
     MatButtonModule,
     MatOptionModule,
     MatAutocompleteModule,
+    MatSelectModule,
     MatInputModule,
+    MatRadioModule,
     AppRoutingModule,
-    MatSidenavModule
+    MatSidenavModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

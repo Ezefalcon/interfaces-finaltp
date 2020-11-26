@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filtrar-mobile',
@@ -6,15 +6,13 @@ import { Component, OnInit, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./filtrar-mobile.component.scss']
 })
 export class FiltrarMobileComponent implements OnInit {
-  @Input() eventEmitter: EventEmitter<null>;
   active:boolean;
+
+  @Output() onClose: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
-    this.eventEmitter.subscribe(change => {
-      this.active = !this.active;
-    });
   }
 
   openFilter(event) {
@@ -28,9 +26,5 @@ export class FiltrarMobileComponent implements OnInit {
     let arrowOpen = element.querySelector(".open-arrow");
     arrowOpen.classList.toggle("rotate");
     divContent.classList.toggle("open")
-  }
-
-  disable() {
-    this.eventEmitter.emit();
   }
 }

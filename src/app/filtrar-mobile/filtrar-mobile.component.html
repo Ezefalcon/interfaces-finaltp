@@ -1,5 +1,5 @@
-<section class="section-filtrar" [ngClass]="{ 'active':active }">
-    <img id="back-arrow" (click)="disable()" src="assets/icons/back-arrow.svg">
+<section class="section-filtrar">
+    <img id="back-arrow" src="assets/icons/back-arrow.svg" (click)="onClose.emit()">
     <h2>Filtrar por</h2>
     <ul>
         <li>
@@ -16,7 +16,7 @@
                 </ul>
             </div>
         </li>
-        
+
         <li>
             <div class="title" (click)="openFilter($event)">
                 <h3>Tipo</h3>
@@ -30,7 +30,7 @@
                 </ul>
             </div>
         </li>
-        
+
         <li>
             <div class="title" (click)="openFilter($event)">
                 <h3>Duracion</h3>
