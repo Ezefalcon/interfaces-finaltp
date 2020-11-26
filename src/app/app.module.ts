@@ -21,6 +21,7 @@ import { SeePlaylistComponent } from './see-playlist/see-playlist.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatInputModule,
     MatRadioModule,
     AppRoutingModule,
+    MatTooltipModule,
     MatSidenavModule,
     ReactiveFormsModule
   ],

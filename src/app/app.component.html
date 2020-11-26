@@ -1,15 +1,19 @@
 <app-navbar #navbar></app-navbar>
 <mat-sidenav-container [autosize]="true">
-  <mat-sidenav #sidenav mode="side" opened class="sidenav"
+  <mat-sidenav #sidenav mode="side" class="sidenav"
                [fixedInViewport]="true" [fixedTopGap]="topGap"
                [fixedBottomGap]="bottomGap">
     <app-sidebar [sidenavToggle]="sidenav"></app-sidebar>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="hidden-sidebar d-none d-lg-block">
-      <img src="assets/icons/down-arrow.svg" class="open-sidebar" (click)="sidenav.toggle()">
+      <img src="assets/icons/down-arrow.svg" class="open-sidebar m-2" (click)="sidenav.toggle()">
+      <img src="assets/icons/my-playlists-icon.svg" class="icon m-2" matTooltip="Mis playlists" [matTooltipPosition]="'right'">
+      <img src="assets/icons/recomendations-icon.svg" class="icon m-2" matTooltip="Recomendadas para ti" [matTooltipPosition]="'right'">
+      <img src="assets/icons/suggestions.svg" class="icon m-2 " matTooltip="Sugerencias" [matTooltipPosition]="'right'">
+      <img src="assets/icons/favorites.svg" class="icon m-2" matTooltip="Mis favoritos" [matTooltipPosition]="'right'">
     </div>
-    <div class="pl-5 pb-3">
+    <div class="padding-left">
       <router-outlet class="ml-2"></router-outlet>
     </div>
   </mat-sidenav-content>
