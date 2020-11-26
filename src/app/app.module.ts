@@ -21,6 +21,7 @@ import { SeePlaylistComponent } from './see-playlist/see-playlist.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { SeeSongComponent } from './see-song/see-song.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
@@ -60,6 +61,7 @@ import { CommentComponent } from './comment/comment.component';
     MatInputModule,
     MatRadioModule,
     AppRoutingModule,
+    MatTooltipModule,
     MatSidenavModule,
     ReactiveFormsModule
   ],
