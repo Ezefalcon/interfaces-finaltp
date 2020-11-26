@@ -4,11 +4,11 @@ import podcastsJson from './mock/podcasts.json';
 import songsJson from './mock/songs.json';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-suggestions',
+  templateUrl: './suggestions.component.html',
+  styleUrls: ['./suggestions.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class SuggestionsComponent implements OnInit {
   playlists:any = playlistsJson;
   podcasts:any = podcastsJson;
   songs:any = songsJson;
@@ -18,20 +18,20 @@ export class HomeComponent implements OnInit {
 
   constructor() {
     this.titlePlaylist = {
-      "title": "Tus playlists",
-      "clickable":true,
+      "title": "Playlists sugeridas",
+      "clickable":false,
       "link": ""
     }
 
     this.titlePodcast = {
-      "title": "Tus podcasts",
-      "clickable":true,
+      "title": "Podcasts sugeridos",
+      "clickable":false,
       "link": ""
     }
 
     this.titleSongs = {
-      "title": "Tus canciones",
-      "clickable":true,
+      "title": "Canciones sugeridas",
+      "clickable":false,
       "link": ""
     }
   }

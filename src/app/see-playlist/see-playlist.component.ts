@@ -12,9 +12,16 @@ export class SeePlaylistComponent implements OnInit {
   playlists: any;
   playlist: any;
   favorite:boolean;
+  titleSongs:any;
   private sub: any;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {
+    this.titleSongs = {
+      "title": "Canciones",
+      "clickable":false,
+      "link": ""
+    }
+  }
 
   ngOnInit(): void {
     this.favorite = false;

@@ -1,4 +1,4 @@
-<img src="assets/icons/back-arrow.svg" class="back-icon d-none d-lg-block" (click)="sidenavToggle.toggle()">
+<img src="assets/icons/back-arrow.svg" class="back-icon d-none d-lg-block icon-medium" (click)="sidenavToggle.toggle()">
 <div class="d-none d-lg-block">
   <div class="ml-3 mr-3">
     <div class="mt-5">
@@ -9,11 +9,15 @@
         </li>
         <li class="nav-item mt-3">
           <img src="assets/icons/recomendations-icon.svg" class="icon">
-          <span class="ml-2">Recomendaciones para ti</span>
+          <a href="#" class="nostyle" [routerLink]="['/recommendations']">
+            <span class="ml-2">Recomendaciones para ti</span>
+          </a>
         </li>
         <li class="nav-item mt-3">
           <img src="assets/icons/suggestions.svg" class="icon">
-          <span class="ml-2">Sugerencias</span>
+          <a href="#" class="nostyle" [routerLink]="['/suggestions']">
+            <span class="ml-2">Sugerencias</span>
+          </a>
         </li>
         <li class="nav-item mt-3">
           <img src="assets/icons/favorites.svg" class="icon">

@@ -1,131 +1,173 @@
 [
-    {
-        "id" : "1",
-        "title": "Today's Top Hits",
-        "description": "Ariana Grande is on top of the Hottest 50!",
-        "views" : "26.960.533",
-        "img" : "https://i.ibb.co/W5tTvfx/spotify-img.jpg",
-        "songs" : [
-          {
-            "reproduciendo": false,
-            "img":"https://i.ibb.co/28PQ0mk/ab67616d000048517368325f5998ef48d4fb5401.jpg",
-            "nombre":"Positions",
-            "artista":"Ariana Grande",
-            "album":"Postitions",
-            "duracion": "2:52",
-            "calificacion": 5 
-          },
-          {
-            "reproduciendo": false,
-            "img":"https://i.ibb.co/Y7ftFMz/ab67616d0000485177ada0863603903f57b34369.jpg",
-            "nombre":"What You Know Bout Love",
-            "artista":"Pop Smoke",
-            "album":"Shoot for the stars",
-            "duracion": "2:40",
-            "calificacion": 4
-          },
-          {
-            "reproduciendo": false,
-            "img":"https://i.ibb.co/1sH4Nq4/ab67616d00004851d46a8fffbe6c8630784f04da.jpg",
-            "nombre":"Lemonade",
-            "artista":"Internet Money",
-            "album":"Lemonade",
-            "duracion": "3:15",
-            "calificacion": 1
-          },
-          {
-            "reproduciendo": false,
-            "img":"https://i.ibb.co/sRP5BKR/ab67616d0000485183b22beb73e2014b20159685.jpg",
-            "nombre":"Lonely",
-            "artista":"Justin Bieber",
-            "album":"Lonely",
-            "duracion": "2:29",
-            "calificacion": 3
-          }
-        ]
-  },
   {
-    "id" : "2",
-    "title": "playlist1",
-    "img":"assets/others/default-playlist.svg",
-    "link":"playlist/2"
-  },
-  {
-    "id" : "3",
-    "title": "playlist2",
-    "img":"assets/others/default-playlist.svg",
-    "link":"playlist/3"
-  },
-  {
-    "id" : "4",
-    "title":"Cachengue en casa",
-    "img":"https://i.ibb.co/6WCWG2B/ab67706f00000002aade2f84b36613140a4ffe0e.jpg",
-    "link":"playlist/4"
-  },
-  {
-    "id" : "5",
-    "title": "playlist3",
-    "img":"assets/others/default-playlist.svg",
-    "link":"playlist/5"
-  },
-  {
-    "id" : "6",
-    "title":"Hits acusticos",
-    "img":"https://i.ibb.co/fkjtWxL/ab67706f000000028fc71e2599fb11d381046c9d.jpg",
-    "link":"playlist/6"
-  },
-  {
-    "id" : "7",
-    "title":"Canta en la ducha",
-    "img":"https://i.ibb.co/0nLbvfm/ab67706f000000029482a47d9687733e9271176f.jpg",
-    "link":"playlist/7"
-  },
-  {
-    "id" : "8",
-    "title":"Hits Alegres",
-    "img":"https://i.ibb.co/LtQ9gsP/ab67706f0000000246038a402592bf87174a8442.jpg",
-    "link":"playlist/8"
-  },
-  {
-    "id" : "9",
-    "title":"Modo acústico",
-    "img":"https://i.ibb.co/HPMcMp0/ab67706f000000023034208bb3dc61b40aa9e91b.jpg",
-    "link":"playlist/9"
-  },
-  {
-    "id" : "10",
-    "title":"Hora de la Lloración",
-    "img":"https://i.ibb.co/9vgD3NX/ab67706f000000025dda570f43926bcbfb397c17.jpg",
-    "link":"playlist/10"
-  },
-  {
-    "id" : "11",
-    "title":"Indie Argentina",
-    "img":"https://i.ibb.co/rmw8Wzf/ab67706f000000020f189280da541cd3e6e10cef.jpg",
-    "link":"playlist/11"
-  },
-  {
-    "id" : "12",
-    "title":"Rock Argentino",
-    "img":"https://i.ibb.co/S38tY3T/ab67706f00000002e08f1248c3c7e250225c3813.jpg",
-    "link":"playlist/12"
-  },
-  {
-    "id" : "13",
-    "title":"La Previa",
-    "img":"https://i.ibb.co/fDKMp5k/ab67706f00000002658c867eeff08584ab273ba6.jpg",
-    "link":"playlist/13"
-  },
-  {
-    "id" : "14",
-    "title":"Mate Relax",
-    "img":"https://i.ibb.co/fvhLcgW/ab67706f00000002373a52c05d01c8fe298eda2e.jpg",
-    "link":"playlist/14"
-  },
-  {
-    "id" : "15",
-    "title":"Feelin Good",
-    "img":"https://i.ibb.co/0FwSzsY/ab67706f0000000213a02d059c0479e65a850267-1.jpg",
-    "link":"playlist/15"
-  }
+      "id" : "1",
+      "title": "Today's Top Hits",
+      "description": "Ariana Grande is on top of the Hottest 50!",
+      "views" : "26.960.533",
+      "img" : "https://i.ibb.co/W5tTvfx/spotify-img.jpg",
+      "songs" : [
+        {
+          "img":"https://i.ibb.co/2cJF8vc/ab67616d0000485112e57573cbc551c187a96107.jpg",
+          "nombre":"Monster (Shawn Mendes & Justin Bieber)",
+          "artista":"Shawn Mendes",
+          "album":"Monster",
+          "duracion": "2:58",
+          "calificacion": 5,
+          "link" : "song/5"
+        },
+        {
+          "img":"https://i.ibb.co/3Tq01k2/ab67616d00001e02fec5ef9f3133aff71c525acc.jpg",
+          "nombre":"Therefore I Am",
+          "artista":"Billie Elish",
+          "album":"Therefore I Am",
+          "duracion": "2:54",
+          "calificacion": 4,
+          "link" : "song/6"
+        },
+        {
+          "img":"https://i.ibb.co/3vCJnk4/ab67616d00001e0234c8199b0b3b3fb42b8a98a8.jpg",
+          "nombre":"Dakiti",
+          "artista":"Bad Bunny",
+          "album":"Dakiti",
+          "duracion": "3:25",
+          "calificacion": 1,
+          "link" : "song/7"
+        },
+        {
+          "img":"https://i.ibb.co/TM7n7RT/ab67616d00001e0249caa4fc6f962057ba65576a.jpg",
+          "nombre":"Levitating (feat. DaBaby)",
+          "artista":"Dua Lipa",
+          "album":"Levitating",
+          "duracion": "3:23",
+          "calificacion": 3,
+          "link" : "song/8"
+        }
+      ]
+},
+{
+  "id" : "2",
+  "title": "playlist1",
+  "img":"assets/others/default-playlist.svg",
+  "link":"playlist/2"
+},
+{
+  "id" : "3",
+  "title": "playlist2",
+  "img":"assets/others/default-playlist.svg",
+  "link":"playlist/3"
+},
+{
+  "id" : "4",
+  "title":"Cachengue en casa",
+  "img":"https://i.ibb.co/6WCWG2B/ab67706f00000002aade2f84b36613140a4ffe0e.jpg",
+  "link":"playlist/4"
+},
+{
+  "id" : "5",
+  "title": "playlist3",
+  "img":"assets/others/default-playlist.svg",
+  "link":"playlist/5"
+},
+{
+  "id" : "6",
+  "title":"Hits acusticos",
+  "img":"https://i.ibb.co/fkjtWxL/ab67706f000000028fc71e2599fb11d381046c9d.jpg",
+  "link":"playlist/6"
+},
+{
+  "id" : "7",
+  "title":"Canta en la ducha",
+  "img":"https://i.ibb.co/0nLbvfm/ab67706f000000029482a47d9687733e9271176f.jpg",
+  "link":"playlist/7"
+},
+{
+  "id" : "8",
+  "title":"Hits Alegres",
+  "img":"https://i.ibb.co/LtQ9gsP/ab67706f0000000246038a402592bf87174a8442.jpg",
+  "link":"playlist/8"
+},
+{
+  "id" : "9",
+  "title":"Modo acústico",
+  "img":"https://i.ibb.co/HPMcMp0/ab67706f000000023034208bb3dc61b40aa9e91b.jpg",
+  "link":"playlist/9"
+},
+{
+  "id" : "10",
+  "title":"Hora de la Lloración",
+  "img":"https://i.ibb.co/9vgD3NX/ab67706f000000025dda570f43926bcbfb397c17.jpg",
+  "link":"playlist/10"
+},
+{
+  "id" : "11",
+  "title":"Indie Argentina",
+  "img":"https://i.ibb.co/rmw8Wzf/ab67706f000000020f189280da541cd3e6e10cef.jpg",
+  "link":"playlist/11"
+},
+{
+  "id" : "12",
+  "title":"Rock Argentino",
+  "img":"https://i.ibb.co/S38tY3T/ab67706f00000002e08f1248c3c7e250225c3813.jpg",
+  "link":"playlist/12"
+},
+{
+  "id" : "13",
+  "title":"La Previa",
+  "img":"https://i.ibb.co/fDKMp5k/ab67706f00000002658c867eeff08584ab273ba6.jpg",
+  "link":"playlist/13"
+},
+{
+  "id" : "14",
+  "title":"Mate Relax",
+  "img":"https://i.ibb.co/fvhLcgW/ab67706f00000002373a52c05d01c8fe298eda2e.jpg",
+  "link":"playlist/14"
+},
+{
+  "id" : "15",
+  "title":"Feelin Good",
+  "img":"https://i.ibb.co/0FwSzsY/ab67706f0000000213a02d059c0479e65a850267-1.jpg",
+  "link":"playlist/15"
+},
+{
+  "id" : "16",
+  "title":"Flow al Sur",
+  "img":"https://i.ibb.co/7vxFGJk/ab67706f00000002c61413fc058eda248d8c3460.jpg",
+  "link":"playlist/16"
+},
+{
+  "id" : "17",
+  "title": "Peaceful Piano",
+  "img":"https://i.ibb.co/M7GWypj/ab67706f00000002ca5a7517156021292e5663a6.jpg",
+  "link":"playlist/17"
+},
+{
+  "id" : "18",
+  "title": "Esto es Cumbia",
+  "img":"https://i.ibb.co/vQRD8RZ/ab67706f000000028f16fa1b6576da6216759c76.jpg",
+  "link":"playlist/18"
+},
+{
+  "id" : "19",
+  "title":"Pop Argentina",
+  "img":"https://i.ibb.co/C687p95/ab67706f000000028563dafc3092f3aa85f4c82a.jpg",
+  "link":"playlist/19"
+},
+{
+  "id" : "20",
+  "title":"Musica para leer",
+  "img":"https://i.ibb.co/dk8SHZv/4489ca5d58ac6d289fa8995ae131cb76738b61cc.jpg",
+  "link":"playlist/20"
+},
+{
+  "id" : "21",
+  "title": "Musica instrumental para estudiar",
+  "img":"https://i.ibb.co/Mh6TG4S/ab67706f00000002e13601f7e99bf150b6ca677d.jpg",
+  "link":"playlist/21"
+},
+{
+  "id" : "22",
+  "title": "En el trabajo",
+  "img":"https://i.ibb.co/KGz0JYW/ab67706f0000000223e52d4569cc037abfb81483.jpg",
+  "link":"playlist/22"
+}
 ]
