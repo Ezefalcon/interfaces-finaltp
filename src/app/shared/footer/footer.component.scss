@@ -76,7 +76,7 @@ footer {
   justify-content: center;
 }
 
-img.favorite.icon {
+img.favorite.icon-medium {
   display: none;
   margin: 0 30px;
 }
@@ -133,11 +133,6 @@ img.favorite.icon {
 
 .rotate {
   transform: rotate(180deg);
-}
-
-.icon {
-  width: 32px;
-  height: 32px;
 }
 
 .right-icons {

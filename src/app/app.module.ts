@@ -21,6 +21,10 @@ import { SeePlaylistComponent } from './see-playlist/see-playlist.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
+import { OpinionesComponent } from './opiniones/opiniones.component';
+import { SeeSongComponent } from './see-song/see-song.component';
+import { RecommendationsComponent } from './recommendations/recommendations.component';
+import { SuggestionsComponent } from './suggestions/suggestions.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { MatRadioModule } from '@angular/material/radio';
     ListaCancionesComponent,
     FiltrarComponent,
     SearchComponent,
-    SeePlaylistComponent
+    SeePlaylistComponent,
+    OpinionesComponent,
+    SeeSongComponent,
+    RecommendationsComponent,
+    SuggestionsComponent
   ],
   imports: [
     BrowserModule,
