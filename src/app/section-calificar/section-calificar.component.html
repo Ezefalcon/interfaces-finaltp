@@ -1,1 +1,10 @@
-<p>section-calificar works!</p>
+<section>
+    <div class="flex center">
+        <img (click)="onClose.emit()" id="arrow" width="20" height="20" src="assets/icons/arrow-title.svg">
+        <h1  (click)="onClose.emit()" class="clickable">Opina</h1>
+    </div>
+    <app-write-comment></app-write-comment>
+    <div *ngFor="let user of users">
+        <app-comment [username]="user.username" [comment]="user.comment" [calification]="user.calification"></app-comment>
+    </div>
+</section>

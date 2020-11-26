@@ -11,12 +11,14 @@ import songs from './mock/songs.json';
 export class SeeSongComponent implements OnInit, OnDestroy {
   @ViewChild('divStars') divStars: ElementRef;
   @ViewChild('progressSong') progressSong: ElementRef;
+  @ViewChild('options') options: ElementRef;
   id: string;
   songs: any;
   song: any;
   favorite:boolean;
   volumeBar:boolean;
   play:boolean;
+  calificar:boolean;
   interval:any;
   first = false;
   pathFilledStar = "assets/icons/star-filled.svg";
@@ -122,9 +124,14 @@ export class SeeSongComponent implements OnInit, OnDestroy {
 
   }
 
-  options(div:HTMLElement) {
-    console.log(div)
-    div.classList.toggle("active");
+  showOptions() {
+    this.options.nativeElement.classList.toggle("active");
+  }
+
+  showCalificar() {
+    this.showOptions();
+    this.calificar = true;
+    this.hidePlayerService.hide$.emit();
   }
 
 }
