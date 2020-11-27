@@ -30,6 +30,7 @@ import { SectionCalificarComponent } from './section-calificar/section-calificar
 import { WriteCommentComponent } from './write-comment/write-comment.component';
 import { BtnComponent } from './btn/btn.component';
 import { CommentComponent } from './comment/comment.component';
+import { SectionOpinionesMobileComponent } from './section-opiniones-mobile/section-opiniones-mobile.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { CommentComponent } from './comment/comment.component';
     SectionCalificarComponent,
     WriteCommentComponent,
     BtnComponent,
-    CommentComponent
+    CommentComponent,
+    SectionOpinionesMobileComponent
   ],
   imports: [
     BrowserModule,

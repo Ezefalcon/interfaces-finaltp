@@ -1,4 +1,4 @@
-<section *ngIf="!mobile">
+<section *ngIf="!mobile" class="desktop">
     
     <section class="flex">
         <div class="content flex">
@@ -6,7 +6,7 @@
                 <img id="song-image" src="{{song.img}}" alt="cancion-image">
                 <div class="flex icons">
       
-                    <img class="icon-medium" src="assets/icons/play.svg" alt="play">
+                    <img class="icon-medium pointer" (click)="playPause()" src="assets/icons/play.svg" alt="play">
       
                     <div class="icon-star icon-medium">
                         <img class="icon-medium" src="assets/icons/star.svg" alt="calificate">
@@ -45,28 +45,18 @@
                 </div>
             </div>
         </div>
-        <div>
-            <img (click)="options(el)" class="three-dots icon-medium pointer" src="assets/icons/three-dots.svg" alt="see-more">
-            <div class="options" #el>
-                <span>Borrar</span>
-                <span>Editar</span>
-            </div>
-        </div>
       </section>
       
       <div class="comments">
           <h2 id="description" >Opiniones</h2>
-      <app-section-calificar></app-section-calificar>
+          <app-section-calificar></app-section-calificar>
       </div>
-
-
-
 </section>
 
 <section [ngClass]="{ 'disabled':calificar }" *ngIf="mobile">
     <div class="flex header">
         <div class="arrow-down">
-            <svg class="icon-medium"  viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.0001 14.6815L21.5916 4.09152L18.4086 0.908517L11.0001 8.31852L3.59155 0.908517L0.408552 4.09152L11.0001 14.6815Z" fill="white"/></svg>
+            <svg class="icon-medium" (click)="goToHome()" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.0001 14.6815L21.5916 4.09152L18.4086 0.908517L11.0001 8.31852L3.59155 0.908517L0.408552 4.09152L11.0001 14.6815Z" fill="white"/></svg>
         </div>
         
         <div class="title">
@@ -132,5 +122,5 @@
 </section>
     
 <div class="section-calificar" [ngClass]="{ 'active': calificar }">
-    <app-section-calificar (onClose)="calificar = false"></app-section-calificar>
+    <app-section-opiniones-mobile (onClose)="calificar = false"></app-section-opiniones-mobile>
 </div>

@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HidePlayerService } from '../services/hide-player.service';
+import { SongListenerService } from '../services/song-listener.service';
 import songs from './mock/songs.json';
 
 @Component({
@@ -28,7 +29,11 @@ export class SeeSongComponent implements OnInit, OnDestroy {
 
   private sub: any;
 
-  constructor(private route: ActivatedRoute,private cdRef:ChangeDetectorRef, private hidePlayerService : HidePlayerService) {
+  constructor(private route: ActivatedRoute,
+    private cdRef:ChangeDetectorRef,
+    private hidePlayerService : HidePlayerService,
+    private router: Router,
+    private songService : SongListenerService ) {
     this.play = true;
   }
   
@@ -36,10 +41,12 @@ export class SeeSongComponent implements OnInit, OnDestroy {
     let mobileResolution = 700;
     let currentResolution = screen.width;
 
-    if (currentResolution < mobileResolution)
+    if (currentResolution < mobileResolution) {
       this.mobile = true;
-    else
+    } else {
       this.mobile = false;
+    }
+
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id'];
       for (let i = 0; i < songs.length; i++) {
@@ -54,27 +61,55 @@ export class SeeSongComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.hidePlayerService.hide$.emit();
+    if (this.mobile)
+      this.hidePlayerService.active();
   }
 
   ngAfterViewChecked() {
     if (!this.first) {
       this.fillStars(this.pathFilledStar,this.song.calificacion);
-      this.hidePlayerService.hide$.emit();
+
+      let resizeHandler = ()=> {
+        let mobileResolution = 700;
+        let currentResolution = screen.width;
+
+        if (currentResolution < mobileResolution) {
+          this.mobile = true;
+        } else {
+          this.mobile = false;
+        }
+
+        if (this.mobile) {
+          this.hidePlayerService.disable();
+        } else {
+          this.hidePlayerService.active();
+        }
+
+      }
+
+      window.onresize = resizeHandler;
+
+      if (this.mobile) {
+        this.hidePlayerService.disable();
+      }
+
     }
+    
     this.first = true;
   }
 
 
   fillStars(path,count) {
-    let stars = this.divStars.nativeElement.children;
-    for (let i = 0; i < stars.length; i++) {
-      if (count > i) {
-        stars[i].src = path;
-      } else {
-        stars[i].src = this.pathStar;
+    try {
+      let stars = this.divStars.nativeElement.children;
+      for (let i = 0; i < stars.length; i++) {
+        if (count > i) {
+          stars[i].src = path;
+        } else {
+          stars[i].src = this.pathStar;
+        }
       }
-    }
+    } catch {}
   }
 
   changeStar(e) {
@@ -83,6 +118,7 @@ export class SeeSongComponent implements OnInit, OnDestroy {
   }
 
   playPause() {
+    this.songService.currentSong$.emit(this.song);
     this.play = !this.play;
       if (!this.play) {
         this.interval = setInterval(()=> {
@@ -139,7 +175,7 @@ export class SeeSongComponent implements OnInit, OnDestroy {
   showCalificar() {
     this.showOptions();
     this.calificar = true;
-    this.hidePlayerService.hide$.emit();
+    this.hidePlayerService.active();
   }
 
   starAnimation(event) {
@@ -163,8 +199,11 @@ export class SeeSongComponent implements OnInit, OnDestroy {
   }
 
   fav() {
-    console.log(this.favorite)
     this.favorite = !this.favorite;
+  }
+
+  goToHome() {
+    this.router.navigate([""]);
   }
 
 }

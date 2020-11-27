@@ -12,6 +12,11 @@
 
 .description {
     margin-left: 3%;
+    color: black;
+}
+
+h3#calification {
+    margin-right: 4%;
 }
 
 section {
@@ -48,6 +53,11 @@ section {
     position: absolute;
     top: 120%;
     left: -415%;
+}
+
+.stars {
+    display: flex;
+    gap: 10px;
 }
 
 .background-califications.active {
