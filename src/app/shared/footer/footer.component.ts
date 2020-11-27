@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { HidePlayerService } from 'src/app/services/hide-player.service';
 import { SongListenerService } from 'src/app/services/song-listener.service';
 
@@ -17,14 +18,14 @@ export class FooterComponent implements OnInit {
   interval:any;
   hide:boolean;
 
-  constructor(private songService : SongListenerService,private hideService : HidePlayerService) {
+  constructor(private songService : SongListenerService,private hideService : HidePlayerService,private router: Router) {
     this.volumeBar = false;
     this.califications = false;
     this.play = true;
     this.fav = !this.fav;
     this.currentSong = {
-      "name" : "Mates y musica hola",
-      "img" : "https://i.ibb.co/Tg4KcvR/ab67706f00000003373a52c05d01c8fe298eda2e.jpg",
+      "name" : "",
+      "img" : "",
       "duration":"3:50",
       "currentDuration":"0:00"
     }
@@ -36,6 +37,7 @@ export class FooterComponent implements OnInit {
       this.currentSong.name = song.nombre;
       this.currentSong.duration = song.duracion;
       this.currentSong.currentDuration = "0:00";
+      this.currentSong.link = song.link;
     });
 
     this.hideService.hide$.subscribe(r => {
@@ -121,5 +123,10 @@ export class FooterComponent implements OnInit {
         star = star.previousElementSibling;
       }
     } catch {}
+  }
+
+  openSong() {
+    console.log(this.currentSong)
+    this.router.navigate([this.currentSong.link]);
   }
 }

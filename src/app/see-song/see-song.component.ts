@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HidePlayerService } from '../services/hide-player.service';
+import { SongListenerService } from '../services/song-listener.service';
 import songs from './mock/songs.json';
 
 @Component({
@@ -28,7 +29,11 @@ export class SeeSongComponent implements OnInit, OnDestroy {
 
   private sub: any;
 
-  constructor(private route: ActivatedRoute,private cdRef:ChangeDetectorRef, private hidePlayerService : HidePlayerService) {
+  constructor(private route: ActivatedRoute,
+    private cdRef:ChangeDetectorRef,
+    private hidePlayerService : HidePlayerService,
+    private router: Router,
+    private songService : SongListenerService ) {
     this.play = true;
   }
   
@@ -54,27 +59,35 @@ export class SeeSongComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.hidePlayerService.hide$.emit();
+    if (this.mobile)
+      this.hidePlayerService.hide$.emit();
   }
 
   ngAfterViewChecked() {
     if (!this.first) {
       this.fillStars(this.pathFilledStar,this.song.calificacion);
-      this.hidePlayerService.hide$.emit();
+
+      if (this.mobile) {
+        this.hidePlayerService.hide$.emit();
+      }
+
     }
+    
     this.first = true;
   }
 
 
   fillStars(path,count) {
-    let stars = this.divStars.nativeElement.children;
-    for (let i = 0; i < stars.length; i++) {
-      if (count > i) {
-        stars[i].src = path;
-      } else {
-        stars[i].src = this.pathStar;
+    try {
+      let stars = this.divStars.nativeElement.children;
+      for (let i = 0; i < stars.length; i++) {
+        if (count > i) {
+          stars[i].src = path;
+        } else {
+          stars[i].src = this.pathStar;
+        }
       }
-    }
+    } catch {}
   }
 
   changeStar(e) {
@@ -83,6 +96,7 @@ export class SeeSongComponent implements OnInit, OnDestroy {
   }
 
   playPause() {
+    this.songService.currentSong$.emit(this.song);
     this.play = !this.play;
       if (!this.play) {
         this.interval = setInterval(()=> {
@@ -159,12 +173,16 @@ export class SeeSongComponent implements OnInit, OnDestroy {
   }
 
   toggle(div:HTMLElement) {
+    console.log(div)
     div.classList.toggle("active");
   }
 
   fav() {
-    console.log(this.favorite)
     this.favorite = !this.favorite;
+  }
+
+  goToHome() {
+    this.router.navigate([""]);
   }
 
 }

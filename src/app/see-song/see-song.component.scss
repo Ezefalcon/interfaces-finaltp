@@ -262,15 +262,17 @@ section {
     position: absolute;
     top: 120%;
     left: -415%;
+  }
+
+  .background-califications.active {
+      opacity: 1;
+  }
+
 }
 
-.background-califications.active {
-    opacity: 1;
+.desktop {
+  margin-bottom: 7%;
 }
-
-}
-
-
 
 .options {
   padding: 20% 20%;
