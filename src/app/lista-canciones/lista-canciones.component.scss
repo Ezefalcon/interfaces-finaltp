@@ -1,6 +1,10 @@
-.imagen-cancion {
-width: 49px;
-height: 49px;
+.imagen-cancion, .imagen {
+    width: 49px;
+    height: 49px;
+}
+
+.imagen {
+    padding-right: 30px;
 }
 
 .linkeable:hover {
@@ -8,17 +12,37 @@ height: 49px;
     cursor: pointer;
 }
 
+.black {
+    color: black;
+}
+
+thead th {
+    border-bottom: 3px solid black;
+}
+
 .title {
     margin-bottom: 2%;
 }
 
 .tabla-cancion {
+    min-width: 630px;
+    width: 93%;
     border-collapse:separate; 
     border-spacing: 0 50px;
 }
 
-.line-icon {
-    margin-right: 13px;
+.tabla-cancion td {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.tabla-cancion td:first-of-type {
+    width: 20px;
+    padding-left: 2%;
+}
+
+.tabla-cancion td:last-of-type {
+    padding-right: 2%;
 }
 
 tr.song {
@@ -37,51 +61,15 @@ tr.song:hover {
 }
 
 .tabla-cancion {
-    left: 49px;
-    position: relative;
+    margin-left: 3%;
 }
 
 td {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 20px;    
-    color: #000000;
-    padding-top:20px;
-    padding-bottom:20px;
+    color: black;
 }
 
 .margen {
     width: 164px;
-}
-
-.reproduccion {
-    width: 30px;
-}
-
-.imagen {
-    width: 71px;
-}
-
-.nombre {
-    width: 240px;
-}
-
-.artista {
-    width: 151px;
-}
-
-.album {
-    width: 183px;
-}
-
-.duracion {
-    width: 135px;
-}
-
-.califiacion {
-    width: 140px;
 }
 
 .pointer {
@@ -89,40 +77,73 @@ td {
 }
 
 .raya {
-width: 995px;
-height: 0px;
-border: 1px solid #000000;
+    width: 98%;
+    height: 1px;
+    border: 1px solid #000000;
 }
 
-h2 {
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-line-height: 20px;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 3px 4px rgba(0, 0, 0, 0.68);
-color: #000000;
-}
-.star {
-    padding-right: 10px;
+.row-stars {
+    display: flex;
+    gap: 10px;
 }
 
-.columnas {
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 20px;
-text-align: left;
-color: #000000;
+.reproduciendo {
+    width: 60px;
+    min-width: 60px;
 }
 
-.row {
-    height: 25px;
+.titles {
+    color: black;
 }
 
+.nombre {
+    width: 20vw;
+}
 
+.artista {
+    width: 15vw;
+}
 
+.album {
+    width: 15vw;
+}
 
+.duracion {
+    width: 10vw;
+}
 
+.calificacion {
+    width: 15vw;
+}
 
+td.nombre, td.album {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+td.artista {
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 900px) {
+    .horizontal-scroll {
+        overflow-x: scroll;
+        width: 100vw;
+    }
+
+    .mobile-none {
+        display: none;
+    }
+
+    td.artista, td.duracion, td.calificacion, td.album {
+        padding-left: 20px;
+    }
+
+    .imagen {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}
