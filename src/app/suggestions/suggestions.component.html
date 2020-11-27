@@ -1,9 +1,14 @@
 <div class="flex-column">
-    <div>
-        <h1>Sugerencias</h1>
+    <h1>Sugerencias</h1>
+
+    <div class="playlists">
         <app-cards [cards]="playlists" [artist]="false" [title]="titlePlaylist"></app-cards>
     </div>
-    <app-cards [cards]="podcasts" [artist]="false" [title]="titlePodcast"></app-cards>
+
+    <div class="podcasts">
+        <app-cards [cards]="podcasts" [artist]="false" [title]="titlePodcast"></app-cards>
+    </div>
+    
     <div class="lista-canciones">
         <app-lista-canciones [canciones]="songs" [title]="titleSongs"></app-lista-canciones>
     </div>

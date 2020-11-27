@@ -12,7 +12,7 @@
     cursor: pointer;
 }
 
-.black {
+.black, h2 {
     color: black;
 }
 
@@ -22,6 +22,7 @@ thead th {
 
 .title {
     margin-bottom: 2%;
+    margin-left: 2%;
 }
 
 .tabla-cancion {
@@ -128,6 +129,11 @@ td.artista {
 }
 
 @media screen and (max-width: 900px) {
+
+    .title {
+        margin-left: 4%;
+    }
+
     .horizontal-scroll {
         overflow-x: scroll;
         width: 100vw;

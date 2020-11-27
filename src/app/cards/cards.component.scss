@@ -119,3 +119,13 @@ div.title-cards {
         box-shadow: 0px 0px 20px 4px rgba(0,0,0,0.75);
     }
 }
+
+@media screen and (max-width: 768px) {
+    .horizontal-scroll {
+        height: 200px;
+    }
+
+    .cards {
+        padding: 10px 0 10px 19px;
+    }
+}

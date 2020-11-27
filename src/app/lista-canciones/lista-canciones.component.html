@@ -1,8 +1,8 @@
 
 <div class="row title">
-    <h2 class="clickable">{{title.title}}</h2>
+    <h2 [ngClass]="{ 'clickable': title.clickable }">{{title.title}}</h2>
 <div>
-    <img width="20" height="20" src="assets/icons/arrow-title.svg">
+    <img *ngIf="title.clickable" width="20" height="20" src="assets/icons/arrow-title.svg">
     </div>
 </div>
 <div class="horizontal-scroll">
