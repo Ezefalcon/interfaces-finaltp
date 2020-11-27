@@ -15,7 +15,7 @@ footer {
 }
 
 .margin {
-  margin-left: 66.53px;
+  margin-left: 0;
 }
 
 .pointer {
@@ -222,6 +222,10 @@ img.switch {
 }
 
 @media screen and (min-width:900px) {
+  .margin {
+    margin-left: 66px;
+  }
+
   .right-icons {
     left: 80%;
   }

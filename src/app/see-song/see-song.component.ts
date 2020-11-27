@@ -41,10 +41,12 @@ export class SeeSongComponent implements OnInit, OnDestroy {
     let mobileResolution = 700;
     let currentResolution = screen.width;
 
-    if (currentResolution < mobileResolution)
+    if (currentResolution < mobileResolution) {
       this.mobile = true;
-    else
+    } else {
       this.mobile = false;
+    }
+
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id'];
       for (let i = 0; i < songs.length; i++) {
@@ -60,15 +62,35 @@ export class SeeSongComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     if (this.mobile)
-      this.hidePlayerService.hide$.emit();
+      this.hidePlayerService.active();
   }
 
   ngAfterViewChecked() {
     if (!this.first) {
       this.fillStars(this.pathFilledStar,this.song.calificacion);
 
+      let resizeHandler = ()=> {
+        let mobileResolution = 700;
+        let currentResolution = screen.width;
+
+        if (currentResolution < mobileResolution) {
+          this.mobile = true;
+        } else {
+          this.mobile = false;
+        }
+
+        if (this.mobile) {
+          this.hidePlayerService.disable();
+        } else {
+          this.hidePlayerService.active();
+        }
+
+      }
+
+      window.onresize = resizeHandler;
+
       if (this.mobile) {
-        this.hidePlayerService.hide$.emit();
+        this.hidePlayerService.disable();
       }
 
     }
@@ -153,7 +175,7 @@ export class SeeSongComponent implements OnInit, OnDestroy {
   showCalificar() {
     this.showOptions();
     this.calificar = true;
-    this.hidePlayerService.hide$.emit();
+    this.hidePlayerService.active();
   }
 
   starAnimation(event) {
@@ -173,7 +195,6 @@ export class SeeSongComponent implements OnInit, OnDestroy {
   }
 
   toggle(div:HTMLElement) {
-    console.log(div)
     div.classList.toggle("active");
   }
 
