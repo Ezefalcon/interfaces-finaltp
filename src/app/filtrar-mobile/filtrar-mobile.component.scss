@@ -31,6 +31,7 @@ div.title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 50px;
 }
 
 div.title, h2, .content-list {
@@ -71,3 +72,23 @@ div.title, h2, .content-list {
     background-color: $bg-color;
     color: white;
 }
+
+.animation-enter {
+  animation-name: appear-from-left;
+  animation-duration: 500ms;
+}
+
+.animation-hide {
+  animation-name: close;
+  animation-duration: 500ms;
+}
+
+@keyframes appear-from-left {
+  0% {
+    left:-100%
+  }
+  100% {
+    left: 0%;
+  }
+}
+
