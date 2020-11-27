@@ -20,17 +20,11 @@ export class ListaCancionesComponent implements OnInit {
   }
 
   mouseEnterSong(song) {
-    if (this.lastSong != undefined) {
-      this.lastSong.reproduciendo = false;
-    }
-
-    this.lastSong = song;
-    this.lastSong.reproduciendo = true;
-    
+    song.srcElement.querySelector(".play-line-icon").src = "assets/icons/play.svg";
   }
 
-  mouseLeaveSong() {
-    this.lastSong.reproduciendo = false;
+  mouseLeaveSong(song) {
+    song.srcElement.querySelector(".play-line-icon").src = "assets/icons/line.svg";
   }
 
   ngOnInit(): void {
