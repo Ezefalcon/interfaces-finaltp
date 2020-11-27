@@ -24,6 +24,7 @@ export class SeeSongComponent implements OnInit, OnDestroy {
   pathFilledStar = "assets/icons/star-filled.svg";
   pathFillStar = "assets/icons/star-fill.svg";
   pathStar = "assets/icons/star.svg";
+  mobile: boolean;
 
   private sub: any;
 
@@ -32,6 +33,13 @@ export class SeeSongComponent implements OnInit, OnDestroy {
   }
   
   ngOnInit(): void {
+    let mobileResolution = 700;
+    let currentResolution = screen.width;
+
+    if (currentResolution < mobileResolution)
+      this.mobile = true;
+    else
+      this.mobile = false;
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id'];
       for (let i = 0; i < songs.length; i++) {
@@ -132,6 +140,31 @@ export class SeeSongComponent implements OnInit, OnDestroy {
     this.showOptions();
     this.calificar = true;
     this.hidePlayerService.hide$.emit();
+  }
+
+  starAnimation(event) {
+    let scrStar = "assets/icons/star.svg";
+    let scrStarFill = "assets/icons/star-fill.svg";
+    let star = event.srcElement;
+    try {
+      while (star.nodeName == 'IMG') {
+        if (star.src.includes(scrStarFill)) {
+          star.src = scrStar;
+        } else {
+          star.src = scrStarFill;
+        }
+        star = star.previousElementSibling;
+      }
+    } catch {}
+  }
+
+  toggle(div:HTMLElement) {
+    div.classList.toggle("active");
+  }
+
+  fav() {
+    console.log(this.favorite)
+    this.favorite = !this.favorite;
   }
 
 }
