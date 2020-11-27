@@ -3,8 +3,8 @@
   <span (click)="showFilters()" class="black pointer">Filtrar</span>
 </div>
 <div class="container">
-  <div *ngIf="show" [@slideOutUpOnLeave]="show">
-    <div class="row" class="d-none d-md-block col-md-12" [@slideInDownOnEnter]="show">
+  <div *ngIf="show" [@slideOutUpOnLeave]="show" [@slideInDownOnEnter]="show">
+    <div class="row" class="d-none d-md-block col-md-12">
       <h3>Filtros</h3>
       <mat-form-field appearance="fill" class="col-md-4 mt-3">
         <mat-label>Generos</mat-label>
@@ -28,8 +28,8 @@
         <mat-checkbox value="4">4</mat-checkbox>
         <mat-checkbox value="5">5</mat-checkbox>
       </mat-radio-group>
+      <button class="main-button">Aplicar filtros</button>
     </div>
-    <button class="main-button">Aplicar filtros</button>
   </div>
   <app-filtrar-mobile *ngIf="show"
                       (onClose)="this.show = !this.show"

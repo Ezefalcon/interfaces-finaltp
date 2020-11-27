@@ -14,8 +14,8 @@
 <div #divCards class="horizontal-scroll">
     <div class="cards">
         <div *ngFor="let card of cards" class="shadow-card card pointer" (click)="see(card)">
-            <img src='{{card.img}}' alt="card" [ngClass]="{'rounded-card': artist}">
-            <span class="title" [ngClass]="{'rounded-title': artist}">{{card.title}}</span>
+            <img src='{{card.img}}' alt="card">
+            <span class="title">{{card.title}}</span>
         </div>
     </div>
 </div>

@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-prod": "ng build --prod --base-href https://ezefalcon.github.io/interfaces-finaltp/",
-    "deploy": "ngh — dir=dist/Interfaces-FinalTP"
+    "deploy": "ngh --dir=dist/Interfaces-FinalTP"
   },
   "private": true,
   "dependencies": {
