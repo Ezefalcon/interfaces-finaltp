@@ -50,4 +50,6 @@
   stroke: #ffffff !important;
 }
 
-
+::ng-deep .mat-drawer-container {
+  color: black;
+}
