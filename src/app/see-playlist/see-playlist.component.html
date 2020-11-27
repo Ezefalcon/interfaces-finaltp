@@ -28,6 +28,21 @@
             <h1 id="title">{{playlist.title}}</h1>
             <h2 id="description">{{playlist.description}}</h2>
             <h3 *ngIf="playlist.views">Reproducciones: {{playlist.views}}</h3>
+            <div class="flex">
+                <h3 id="calification">Calificacion: </h3>
+                
+                <div class="stars">
+                    <div class="star"  *ngFor="let element of counter(5); let i=index">
+                        <div *ngIf="compare(i); else normalStar">
+                            <img class="icon-small" src="assets/icons/star-filled.svg" alt="star">
+                        </div>
+                        
+                        <ng-template #normalStar>
+                            <img class="icon-small" src="assets/icons/star.svg" alt="star">
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div>

@@ -63,4 +63,12 @@ export class SeePlaylistComponent implements OnInit {
   options(div:HTMLElement) {
     div.classList.toggle("active");
   }
+
+  counter(i: number) {
+    return new Array(i);
+  }
+
+  compare(i:number) {
+    return i < this.playlist.calification;
+  }
 }
