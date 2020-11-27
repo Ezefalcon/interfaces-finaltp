@@ -1,0 +1,32 @@
+section {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.auto {
+    width: 100%;
+}
+
+.user-icon {
+    margin-right: 10px;
+}
+
+.flex {
+    display: flex;
+}
+
+.stars {
+    display: flex;
+    gap: 10px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    justify-content: space-between;
+}

@@ -33,3 +33,13 @@
 .padding-left {
   padding-left: 67px;
 }
+
+@media screen and (max-width:768px) {
+  .padding-left {
+    padding-left: 0 !important;
+  }
+
+  .height-100 {
+    height: 90vh;
+  }
+}

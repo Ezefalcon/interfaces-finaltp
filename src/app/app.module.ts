@@ -22,11 +22,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { OpinionesComponent } from './opiniones/opiniones.component';
 import { SeeSongComponent } from './see-song/see-song.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { SectionCalificarComponent } from './section-calificar/section-calificar.component';
+import { WriteCommentComponent } from './write-comment/write-comment.component';
+import { BtnComponent } from './btn/btn.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -41,10 +44,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FiltrarComponent,
     SearchComponent,
     SeePlaylistComponent,
-    OpinionesComponent,
     SeeSongComponent,
     RecommendationsComponent,
-    SuggestionsComponent
+    SuggestionsComponent,
+    SectionCalificarComponent,
+    WriteCommentComponent,
+    BtnComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
