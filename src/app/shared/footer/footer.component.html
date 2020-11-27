@@ -1,8 +1,11 @@
 <footer *ngIf="!hide">
-  <img class="pointer" id="song-img" src="{{currentSong.img}}">
+  <img *ngIf="currentSong.img != ''; else margin" class="pointer" (click)="openSong()" id="song-img" src="{{currentSong.img}}">
+  <ng-template #margin>
+    <div class="margin"></div>
+  </ng-template>
   <div class="content">
     <div class="flex-start">
-      <div class="song-name pointer">{{currentSong.name}}</div>
+      <div (click)="openSong()" class="song-name pointer">{{currentSong.name}}</div>
       <img class="icon-medium favorite pointer switch" (click)="favorite()" src="assets/icons/favorite-song.svg" [ngClass]="{ 'enabled':fav }">
       <img class="icon-medium favorite pointer switch" (click)="favorite()" src="assets/icons/favorite-song-filled.svg" [ngClass]="{ 'enabled':!fav }">
       
