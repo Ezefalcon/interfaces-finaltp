@@ -17,3 +17,14 @@ h1 {
 .playlists {
     margin-bottom: 10%;
 }
+
+@media screen and (min-width: 900px) {
+    h1, .playlists {
+        margin-bottom: 3%
+    }
+
+    .lista-canciones {
+        margin-top: 3%;
+    }
+
+}

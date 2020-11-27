@@ -96,6 +96,10 @@ div.title-cards {
     margin-top: 1.5%;
 }
 
+.flex {
+    display: flex;
+}
+
 .row {
     display: flex;
     justify-content: space-between;
@@ -126,6 +130,11 @@ div.title-cards {
 }
 
 @media screen and (max-width: 768px) {
+
+    .title-cards {
+        width: 90%;
+    }
+
     .horizontal-scroll {
         height: 200px;
     }

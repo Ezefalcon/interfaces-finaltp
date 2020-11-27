@@ -1,4 +1,5 @@
-import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,15 +12,20 @@ export class AppComponent implements OnInit,AfterViewChecked{
   bottomGap: number = 0;
   topGap: number = 0;
   @ViewChild('navbar', {read: ElementRef}) navBarView: ElementRef;
+  @ViewChild('fixBody') element: ElementRef;
   sideNavToggler: boolean = false;
 
   constructor(private cd: ChangeDetectorRef,
-              private router: Router) {
+              private router: Router,
+              @Inject(DOCUMENT) private document: Document) {
     this.topGap = 0;
   }
 
   ngAfterViewChecked(): void {
     this.topGap = (<HTMLElement>this.navBarView.nativeElement).getBoundingClientRect().height
+    let maxHeight = this.navBarView.nativeElement.parentElement.getBoundingClientRect().height;
+    let body = this.document.body;
+    body.style.height = maxHeight;
     this.cd.detectChanges();
   }
 
