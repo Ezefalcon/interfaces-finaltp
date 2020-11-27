@@ -43,3 +43,7 @@
     height: 90vh;
   }
 }
+
+::ng-deep .mat-drawer-content {
+  overflow: hidden !important;
+}

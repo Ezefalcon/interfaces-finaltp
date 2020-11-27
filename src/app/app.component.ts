@@ -1,4 +1,5 @@
 import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ export class AppComponent implements OnInit,AfterViewChecked{
   @ViewChild('navbar', {read: ElementRef}) navBarView: ElementRef;
   sideNavToggler: boolean = false;
 
-  constructor(private cd: ChangeDetectorRef) {
+  constructor(private cd: ChangeDetectorRef,
+              private router: Router) {
     this.topGap = 0;
   }
 
@@ -22,5 +24,9 @@ export class AppComponent implements OnInit,AfterViewChecked{
   }
 
   ngOnInit(): void {
+  }
+
+  navigate(url) {
+    this.router.navigate([url]);
   }
 }
